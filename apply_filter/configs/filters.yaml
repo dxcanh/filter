@@ -1,0 +1,37 @@
+squid_game_front_man:
+  - path: "filters/images/squid_game_front_man.png"
+    anno_path: "filters/annotate_file/squid_game_front_man.csv"
+    morph: true
+    animated: false
+    has_alpha: true
+
+anonymous:
+  - path: "filters/images/anonymous.png"
+    anno_path: "filters/annotate_file/anonymous_annotations.csv"
+    morph: true
+    animated: false
+    has_alpha: true
+
+dog:
+  - path: "filters/images/dog-ears.png"
+    anno_path: "filters/annotate_file/dog-ears_annotations.csv"
+    morph: false
+    animated: false
+    has_alpha: true
+  - path: "filters/images/dog-nose.png"
+    anno_path: "filters/annotate_file/dog-nose_annotations.csv"
+    morph: false
+    animated: false
+    has_alpha: true
+
+cat:
+  - path: "filters/images/cat-ears.png"
+    anno_path: "filters/annotate_file/cat-ears_annotations.csv"
+    morph: false
+    animated: false
+    has_alpha: true
+  - path: "filters/images/cat-nose.png"
+    anno_path: "filters/annotate_file/cat-nose_annotations.csv"
+    morph: false
+    animated: false
+    has_alpha: true

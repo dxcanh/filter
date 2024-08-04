@@ -1,0 +1,14 @@
+deepface==0.0.79
+gradio==3.30.0
+numpy==1.23.5
+opencv_contrib_python==4.7.0.72
+opencv_python==4.7.0.72
+opencv_python_headless==4.7.0.72
+Pillow==9.5.0
+pyrootutils==1.0.4
+PyYAML==6.0
+Requests==2.30.0
+setuptools==67.6.1
+torch==2.0.0
+torchinfo==1.7.2
+torchvision==0.15.1
