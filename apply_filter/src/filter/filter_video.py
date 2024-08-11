@@ -9,6 +9,8 @@ import math
 from .filter_functions import *
 from . import faceBlendCommon as fbc
 
+import gradio as gr
+
 def filter_frame(frame: np.array, filter_name: str, model: torch.nn.Module = None, transforms: transforms = None, points2Prev = None, img2GrayPrev = None):
     # frame_image
     frame_image = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
@@ -18,7 +20,7 @@ def filter_frame(frame: np.array, filter_name: str, model: torch.nn.Module = Non
     filters, multi_filter_runtime = load_filter(filter_name=filter_name)
 
     # detect faces
-    resp_objs = DeepFace.extract_faces(img_path=frame, detector_backend="opencv", enforce_detection=False)
+    resp_objs = DeepFace.extract_faces(img_path=frame, target_size=(256, 256), detector_backend="opencv", enforce_detection=False)
     if resp_objs is not None:
         for resp_obj in resp_objs:
             # deal with extract_faces
@@ -129,12 +131,13 @@ def filter_frame(frame: np.array, filter_name: str, model: torch.nn.Module = Non
                     output = temp1 + temp2
                 
                 frame = np.array(output, dtype=np.uint8)
+                # frame = output
     
     return frame, points2Prev, img2GrayPrev
 
 if __name__ == "__main__":
     # prepare video capture
-    source = "apply_filter/test/data/videos/IMG_1843.MOV"
+    source = "apply_filter/test/data/videos/5696874111879.mp4"
     cap = cv2.VideoCapture(source)
     cap_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 
@@ -150,16 +153,21 @@ if __name__ == "__main__":
     
     # loop through each frame
     isFirstFrame = True
+    
+    # for optical Flow
+    points2Prev = None
+    img2GrayPrev = None
+    
     while(cap.isOpened()):
         # common
         ret, frame = cap.read()
         if ret == False:
             break
         if source == 0:
-            frame = cv2.flip(frame, 1)
+            frame = cv2.flip(frame, 0)
 
         # apply filter
-        frame = filter_frame(frame, "squid_game_front_man", model, simple_transform)
+        frame, points2Prev, img2GrayPrev = filter_frame(frame, "squid_game_front_man", model, simple_transform, points2Prev, img2GrayPrev)
         
         if source == 0:
             # fps
@@ -188,3 +196,4 @@ if __name__ == "__main__":
     if source != 0:
         out.release()
     cv2.destroyAllWindows()
+    
