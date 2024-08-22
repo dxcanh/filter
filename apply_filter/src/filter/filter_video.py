@@ -20,7 +20,7 @@ def filter_frame(frame: np.array, filter_name: str, model: torch.nn.Module = Non
     filters, multi_filter_runtime = load_filter(filter_name=filter_name)
 
     # detect faces
-    resp_objs = DeepFace.extract_faces(img_path=frame, target_size=(256, 256), detector_backend="opencv", enforce_detection=False)
+    resp_objs = DeepFace.extract_faces(img_path=frame, detector_backend="opencv", enforce_detection=False)
     if resp_objs is not None:
         for resp_obj in resp_objs:
             # deal with extract_faces

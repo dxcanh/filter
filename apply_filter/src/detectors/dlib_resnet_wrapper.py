@@ -5,13 +5,13 @@ import numpy as np
 from torchvision import transforms
 import pyrootutils
 
-package_dir = pyrootutils.find_root(search_from=__file__, indicator=".project-root")
+package_dir = str(pyrootutils.find_root(search_from=__file__, indicator=".project-root")) + "/apply_filter/"
 
 def load_model(ckpt_path: str ="src/basemodels/dlib_resnet_state_dict.pth")->torch.nn.Module:
     """Load model from ckpt path and create a simple transform for input of model"""
 
     # prepare path
-    ckpt_path = package_dir / ckpt_path
+    ckpt_path = package_dir + ckpt_path
 
     # load model from pth file
     model = DlibResnet()

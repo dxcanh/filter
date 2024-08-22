@@ -6,7 +6,7 @@ from . import faceBlendCommon as fbc
 import os
 import pyrootutils
 
-package_dir = str(pyrootutils.find_root(search_from=__file__, indicator=".project-root")) + "/"
+package_dir = str(pyrootutils.find_root(search_from=__file__, indicator=".project-root")) + "/apply_filter/"
 config_path = os.path.join(package_dir, "configs", "filters.yaml")
 
 with open(config_path, "r") as f:

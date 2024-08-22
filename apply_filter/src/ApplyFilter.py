@@ -1,5 +1,5 @@
 from PIL import Image
-from apply_filter.src.filter import filter_functions, filter_image_with_yolo, filter_video, filter_image
+from apply_filter.src.filter import filter_functions, filter_video, filter_image
 from apply_filter.src.functions import load_image, load_pil_image
 import cv2
 from apply_filter.src.detectors.dlib_resnet_wrapper import load_model

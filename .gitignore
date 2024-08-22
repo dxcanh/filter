@@ -163,4 +163,6 @@ cython_debug/
 /data/
 /flagged/
 /outputs/
-*/weights/
+
+# facefusion
+/facefusion/
