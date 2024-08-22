@@ -163,6 +163,5 @@ cython_debug/
 /data/
 /flagged/
 /outputs/
-
-# facefusion
 /facefusion/
+/models/
