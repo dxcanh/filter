@@ -18,8 +18,8 @@ git clone https://github.com/dxcanh/filter.git
 cd filter
 
 # create conda environment
-conda create -n myenv python=3.9
-conda activate myenv
+conda create -n filter python=3.9
+conda activate filter
 pip install -r requirements.txt
 
 ```
@@ -29,7 +29,7 @@ pip install -r requirements.txt
 Run application
     
 ```bash
-python -m apply_filter.app
+python -m app
 ```
 
 Now, you can access the application at localhost:4000
