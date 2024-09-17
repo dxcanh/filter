@@ -28,10 +28,10 @@ pip install -r requirements.txt
     
 Run application
     
-    ```bash
-    python -m apply_filter.app
-    ```
-    
+```bash
+python -m apply_filter.app
+```
+
 Now, you can access the application at localhost:4000
     
 ## Results
