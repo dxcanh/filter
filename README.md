@@ -8,7 +8,7 @@
 
 In filter project, I am developing an application that applies filters to human faces in an image. I used deepface library for face detection, ResNet18 for facial landmarks detection, and then apply filters to the faces using Delaunay triangulation and affine transformation.
 
-In this repository, I implement an application that applies filters to faces using YOLO5Face, ResNet18, along with two algorithms: Delaunay triangulation and affine transformation. Subsequently, I deploy it as a web application using the Gradio library.
+In this repository, I implement an application that applies filters to faces using deepface, ResNet18, along with two algorithms: Delaunay triangulation and affine transformation. Subsequently, I deploy it as a web application using the Gradio library.
 
 ## Installation
 
